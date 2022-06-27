@@ -14,10 +14,10 @@ function App() {
       <h2>Google Search Clone</h2>
       <div className="bg-gray-100 dark:bg-grey-900 dark:text-gray-200 min-h-screen">
         App
+        <NavBar />
+        <Routes />
+        <Footer />
       </div>
-      <NavBar />
-      <Routes />
-      <Footer />
     </div>
   );
 }

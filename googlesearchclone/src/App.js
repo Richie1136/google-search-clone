@@ -14,7 +14,7 @@ function App() {
       <h2>Google Search Clone</h2>
       <div className="bg-gray-100 dark:bg-grey-900 dark:text-gray-200 black min-h-screen">
         App
-        <NavBar />
+        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Routes />
         <Footer />
       </div>

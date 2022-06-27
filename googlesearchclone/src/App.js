@@ -1,9 +1,23 @@
-import './App.css';
+import Footer from "./components/footer/Footer";
+import NavBar from "./components/navbar/NavBar";
+import Routes from "./components/routes/Routes";
+
+import { useState } from 'react'
+
 
 function App() {
+
+  const [darkMode, setDarkMode] = useState(false)
+
   return (
-    <div className="App">
+    <div className={darkMode ? 'dark' : ''}>
       <h2>Google Search Clone</h2>
+      <div className="bg-gray-100 dark:bg-grey-900 dark:text-gray-200 min-h-screen">
+        App
+      </div>
+      <NavBar />
+      <Routes />
+      <Footer />
     </div>
   );
 }

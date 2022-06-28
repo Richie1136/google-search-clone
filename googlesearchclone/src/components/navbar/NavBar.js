@@ -18,7 +18,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
           </p>
         </NavLink>
         <button onClick={changeTheme}>
-
+          {darkMode ? 'Light' : 'Dark'}
         </button>
       </div>
     </div>

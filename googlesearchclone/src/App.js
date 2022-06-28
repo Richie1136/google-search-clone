@@ -7,14 +7,13 @@ import { useState } from 'react'
 
 function App() {
 
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkTheme, setDarkTheme] = useState(false)
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className={darkTheme ? 'dark' : ''}>
       <h2>Google Search Clone</h2>
-      <div className="bg-gray-100 dark:bg-grey-900 dark:text-gray-200 black min-h-screen hover:shadow-lg">
-        App
-        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <div className="dark:bg-gray-900 bg-gray-100 dark:text-gray-200 black min-h-screen">
+        <NavBar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
         <Routes />
         <Footer />
       </div>

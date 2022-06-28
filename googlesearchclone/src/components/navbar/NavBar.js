@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom'
 
 {/* py means top and bottom and px means left and right*/ }
 
-const NavBar = ({ darkMode, setDarkMode }) => {
+const NavBar = ({ darkTheme, setDarkTheme }) => {
 
   const changeTheme = () => {
-    setDarkMode(!darkMode)
+    setDarkTheme(!darkTheme)
   }
 
   return (
@@ -18,7 +18,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
           </p>
         </NavLink>
         <button className='text-xl dark:bg-gray-50 dark:text-gray-900 bg-white border rounded-full px-2 py-1' onClick={changeTheme}>
-          {darkMode ? '💡 Light' : '🌙 Dark'}
+          {darkTheme ? '💡 Light' : '🌙 Dark'}
         </button>
       </div>
     </div>
@@ -26,4 +26,3 @@ const NavBar = ({ darkMode, setDarkMode }) => {
 }
 
 export default NavBar
-

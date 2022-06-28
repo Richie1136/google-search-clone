@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import Search from '../search/Search'
 
 {/* py means top and bottom and px means left and right*/ }
 
@@ -21,6 +22,7 @@ const NavBar = ({ darkTheme, setDarkTheme }) => {
           {darkTheme ? '💡 Light' : '🌙 Dark'}
         </button>
       </div>
+      <Search />
     </div>
   )
 }

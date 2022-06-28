@@ -12,7 +12,7 @@ function App() {
   return (
     <div className={darkMode ? 'dark' : ''}>
       <h2>Google Search Clone</h2>
-      <div className="bg-gray-100 dark:bg-grey-900 dark:text-gray-200 black min-h-screen">
+      <div className="bg-gray-100 dark:bg-grey-900 dark:text-gray-200 black min-h-screen hover:shadow-lg">
         App
         <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Routes />

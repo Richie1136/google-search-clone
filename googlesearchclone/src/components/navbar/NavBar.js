@@ -17,8 +17,8 @@ const NavBar = ({ darkMode, setDarkMode }) => {
             Googly 🔎
           </p>
         </NavLink>
-        <button onClick={changeTheme}>
-          {darkMode ? 'Light' : 'Dark'}
+        <button className='text-xl dark:bg-gray-50 dark:text-gray-900 bg-white border rounded-full px-2 py-1' onClick={changeTheme}>
+          {darkMode ? '💡 Light' : '🌙 Dark'}
         </button>
       </div>
     </div>

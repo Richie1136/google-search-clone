@@ -16,12 +16,15 @@ const Results = () => {
     return <Loading />
   }
 
-  console.log(location.pathname)
-
   switch (location.pathname) {
     case '/search':
       return 'SEARCH'
-
+    case '/images':
+      return 'SEARCH'
+    case '/news':
+      return 'SEARCH'
+    case '/videos':
+      return 'SEARCH'
     default:
       return 'ERROR!'
   }

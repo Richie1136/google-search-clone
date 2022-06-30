@@ -1,9 +1,23 @@
-import Loader from 'react-loader-spinner'
 
-const Loading = () => (
-  <div className='flex justify-center items-center'>
-    <Loader type='Puff' color='#00BFFF' height={550} width={80} />
-  </div>
-)
+import React from 'react'
+import './Loading.css'
+
+const Loading = () => {
+  return (
+    <>
+      <div className='loading'>
+        <div className='card'>
+          <div style={{ marginTop: '2em' }}>
+            <div className='container'>
+              <p className='loading'>
+                <b>LOADING...</b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
 
 export default Loading

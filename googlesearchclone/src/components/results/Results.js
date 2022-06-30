@@ -8,13 +8,13 @@ import Loading from '../loading/Loading'
 
 const Results = () => {
 
-  const { results, isLoading, getResults, searchTerm } = useResultContext()
+  // const { results, isLoading, getResults, searchTerm } = useResultContext()
 
   const location = useLocation() // images, news, videos
 
-  if (isLoading) {
-    return <Loading />
-  }
+  // if (isLoading) {
+  //   return <Loading />
+  // }
   return (
     <div>Results</div>
   )

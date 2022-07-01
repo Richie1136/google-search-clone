@@ -27,6 +27,7 @@ const Results = () => {
       return (
         <div className='flex flex-wrap justify-between space-y-6 sm:px-56'>
           {results?.results?.map(({ link, title }, index) => (
+            // response is results array 8 and then results again with the objects
             <div key={index} className='md:w-2/5 w-full'>
               <a href={link} target="_blank" rel='noreferrer'>
                 <p className='text-sm'>

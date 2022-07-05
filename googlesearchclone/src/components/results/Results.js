@@ -10,6 +10,8 @@ const Results = () => {
 
   const { results, isLoading, getResults, searchTerm } = useResultContext()
 
+  // console.log(results)
+
   const location = useLocation() // images, news, videos
 
   useEffect(() => {
@@ -42,7 +44,22 @@ const Results = () => {
         </div>
       )
     case '/images':
-      return 'SEARCH'
+      return (
+        <div className='flex flex-wrap justify-center items-center'>
+          {results?.image_results?.map(({ image, link: { href, title } }, index) => (
+            // Getting this from the Context provider
+            // loading lazy so that all images aren't loading at the same time
+            // break-words adds line breaks mid word if needed.
+            <a key={index} className='sm:p-3 p-5' href={href} target="_blank" rel='noreferrer'>
+              <img src={image?.src} alt={title} loading='lazy' />
+              <p className='w-36 break-words text-sm mt-2'>
+                {title}
+
+              </p>
+            </a>
+          ))}
+        </div>
+      )
     case '/news':
       return 'SEARCH'
     case '/videos':

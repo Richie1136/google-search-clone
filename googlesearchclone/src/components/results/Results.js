@@ -15,8 +15,14 @@ const Results = () => {
   const location = useLocation() // images, news, videos
 
   useEffect(() => {
-    getResults('/search/q=elon+musk')
-  }, [])
+    if (searchTerm) {
+      if (location.pathname === '/videos') {
+        getResults(`/search/q=${searchTerm} videos`)
+      } else {
+        getResults(`/${location.pathname}/${searchTerm}`)
+      }
+    }
+  }, [searchTerm, location.pathname])
 
   if (isLoading) {
     return <Loading />

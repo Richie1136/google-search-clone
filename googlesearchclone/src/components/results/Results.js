@@ -49,9 +49,12 @@ const Results = () => {
           ))}
         </div>
       )
-    case '/images':
+    case '/image':
       return (
+
         <div className='flex flex-wrap justify-center items-center'>
+          {console.log(results)}
+
           {results?.map(({ image, link: { href, title } }, index) => (
             // Getting this from the Context provider
             // loading lazy so that all images aren't loading at the same time
@@ -60,7 +63,6 @@ const Results = () => {
               <img src={image?.src} alt={title} loading='lazy' />
               <p className='w-36 break-words text-sm mt-2'>
                 {title}
-
               </p>
             </a>
           ))}
@@ -69,8 +71,10 @@ const Results = () => {
     case '/news':
       return (
         <div className='flex flex-wrap justify-between space-y-6 sm:px-56 items-center'>
+          {console.log(results)}
           {results?.map(({ links, id, source, title }) => (
-            // response is results array 8 and then results again with the objects
+            // results has links object, source object with the href and a title, and the 
+            // title 
             <div key={id} className='md:w-2/5 w-full'>
               <a className='hover:underline' href={links?.[0].href} target="_blank" rel='noreferrer'>
                 <p className='text-lg dark:text-blue-300 text-blue-700'>

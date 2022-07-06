@@ -18,15 +18,15 @@ export const ResultContextProvider = ({ children }) => {
     const response = await fetch(`${baseUrl}${type}`, {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'e9f136fd86msh20374d953bfb05ep137d7ejsnaede58975cae',
-        'X-RapidAPI-Host': 'google-search3.p.rapidapi.com',
+        'x-rapidapi-key': 'e9f136fd86msh20374d953bfb05ep137d7ejsnaede58975cae',
+        'x-rapidapi-host': 'google-search3.p.rapidapi.com',
       }
-    })
+    });
     const data = await response.json()
 
     if (type.includes('/news')) {
       setResults(data.entries)
-    } else if (type.includes('/images')) {
+    } else if (type.includes('/image')) {
       setResults(data.image_results)
     } else {
       setResults(data.results)

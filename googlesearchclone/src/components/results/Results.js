@@ -8,7 +8,7 @@ import Loading from '../loading/Loading'
 
 const Results = () => {
 
-  const { results, isLoading, getResults, searchTerm } = useResultContext()
+  const { results: { results, image_results }, isLoading, getResults, searchTerm } = useResultContext()
 
   // console.log(results)
 
@@ -17,9 +17,9 @@ const Results = () => {
   useEffect(() => {
     if (searchTerm) {
       if (location.pathname === '/videos') {
-        getResults(`/search/q=${searchTerm} videos`)
+        getResults(`/search/q=${searchTerm} videos`);
       } else {
-        getResults(`/${location.pathname}/${searchTerm}`)
+        getResults(`${location.pathname}/q=${searchTerm}&num=40`);
       }
     }
   }, [searchTerm, location.pathname])
@@ -34,7 +34,7 @@ const Results = () => {
     case '/search':
       return (
         <div className='flex flex-wrap justify-between space-y-6 sm:px-56'>
-          {results?.results?.map(({ link, title }, index) => (
+          {results?.map(({ link, title }, index) => (
             // response is results array 8 and then results again with the objects
             <div key={index} className='md:w-2/5 w-full'>
               <a href={link} target="_blank" rel='noreferrer'>
@@ -52,7 +52,7 @@ const Results = () => {
     case '/images':
       return (
         <div className='flex flex-wrap justify-center items-center'>
-          {results?.image_results?.map(({ image, link: { href, title } }, index) => (
+          {image_results?.map(({ image, link: { href, title } }, index) => (
             // Getting this from the Context provider
             // loading lazy so that all images aren't loading at the same time
             // break-words adds line breaks mid word if needed.
@@ -67,7 +67,25 @@ const Results = () => {
         </div>
       )
     case '/news':
-      return 'SEARCH'
+      return (
+        <div className='flex flex-wrap justify-between space-y-6 sm:px-56 items-center'>
+          {/* {news?.map(({ links, id, source, title }) => (
+            // response is results array 8 and then results again with the objects
+            <div key={id} className='md:w-2/5 w-full'>
+              <a className='hover:underline' href={links?.[0].href} target="_blank" rel='noreferrer'>
+                <p className='text-lg dark:text-blue-300 text-blue-700'>
+                  {title}
+                </p>
+                <div className='flex gap-4'>
+                  <a href={source?.href} target="_blank" rel='noreferrer'>
+                    {source?.href}
+                  </a>
+                </div>
+              </a>
+            </div>
+          ))} */}
+        </div>
+      )
     case '/videos':
       return 'SEARCH'
     default:

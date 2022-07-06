@@ -8,7 +8,7 @@ import Loading from '../loading/Loading'
 
 const Results = () => {
 
-  const { results: { results, image_results }, isLoading, getResults, searchTerm } = useResultContext()
+  const { results, isLoading, getResults, searchTerm } = useResultContext()
 
   // console.log(results)
 
@@ -52,7 +52,7 @@ const Results = () => {
     case '/images':
       return (
         <div className='flex flex-wrap justify-center items-center'>
-          {image_results?.map(({ image, link: { href, title } }, index) => (
+          {results?.map(({ image, link: { href, title } }, index) => (
             // Getting this from the Context provider
             // loading lazy so that all images aren't loading at the same time
             // break-words adds line breaks mid word if needed.
@@ -69,7 +69,7 @@ const Results = () => {
     case '/news':
       return (
         <div className='flex flex-wrap justify-between space-y-6 sm:px-56 items-center'>
-          {/* {news?.map(({ links, id, source, title }) => (
+          {results?.map(({ links, id, source, title }) => (
             // response is results array 8 and then results again with the objects
             <div key={id} className='md:w-2/5 w-full'>
               <a className='hover:underline' href={links?.[0].href} target="_blank" rel='noreferrer'>
@@ -83,7 +83,7 @@ const Results = () => {
                 </div>
               </a>
             </div>
-          ))} */}
+          ))}
         </div>
       )
     case '/videos':

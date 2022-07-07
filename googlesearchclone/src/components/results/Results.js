@@ -16,8 +16,8 @@ const Results = () => {
 
   useEffect(() => {
     if (searchTerm) {
-      if (location.pathname === '/videos') {
-        getResults(`/search/q=${searchTerm} videos`);
+      if (location.pathname === '/video') {
+        getResults(`/search/q=${searchTerm} video`);
       } else {
         getResults(`${location.pathname}/q=${searchTerm}&num=40`);
       }
@@ -90,8 +90,17 @@ const Results = () => {
           ))}
         </div>
       )
-    case '/videos':
-      return 'SEARCH'
+    case '/video':
+      return (
+        <div className='flex flex-wrap'>
+          {console.log(results)}
+          {results?.map((video, index) => (
+            <div className='p-2' key={index}>
+              <ReactPlayer url={video.additional_links?.[0].href} />
+            </div>
+          ))}
+        </div>
+      )
     default:
       return 'ERROR!'
   }

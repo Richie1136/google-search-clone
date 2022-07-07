@@ -10,9 +10,7 @@ const Results = () => {
 
   const { results, isLoading, getResults, searchTerm } = useResultContext()
 
-  // console.log(results)
-
-  const location = useLocation() // images, news, videos
+  const location = useLocation() // image, news, video
 
   useEffect(() => {
     if (searchTerm) {
@@ -53,8 +51,6 @@ const Results = () => {
       return (
 
         <div className='flex flex-wrap justify-center items-center'>
-          {console.log(results)}
-
           {results?.map(({ image, link: { href, title } }, index) => (
             // Getting this from the Context provider
             // loading lazy so that all images aren't loading at the same time
@@ -71,7 +67,6 @@ const Results = () => {
     case '/news':
       return (
         <div className='flex flex-wrap justify-between space-y-6 sm:px-56 items-center'>
-          {console.log(results)}
           {results?.map(({ links, id, source, title }) => (
             // results has links object, source object with the href and a title, and the 
             // title 
@@ -93,7 +88,6 @@ const Results = () => {
     case '/video':
       return (
         <div className='flex flex-wrap'>
-          {console.log(results)}
           {results?.map((video, index) => (
             <div className='p-2' key={index}>
               <ReactPlayer url={video.additional_links?.[0].href} />

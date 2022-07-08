@@ -1,8 +1,11 @@
-import React from 'react'
+import Links from "../links/Links"
 
 const Search = () => {
   return (
-    <div>Search</div>
+    <div>
+      Search
+      <Links />
+    </div>
   )
 }
 

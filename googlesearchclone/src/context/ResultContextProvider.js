@@ -3,7 +3,12 @@ import { createContext, useContext, useState } from 'react'
 const ResultContext = createContext()
 
 
-const baseUrl = 'https://google-search3.p.rapidapi.com/api/v1'
+const baseUrl = 'https://google-search3.p.rapidapi.com/api/v1';
+
+// const APIKEY = process.env.REACT_APP_API_KEY
+
+// console.log(process.env.REACT_APP_API_KEY)
+
 
 
 export const ResultContextProvider = ({ children }) => {
@@ -22,6 +27,7 @@ export const ResultContextProvider = ({ children }) => {
         'x-rapidapi-host': 'google-search3.p.rapidapi.com',
       }
     });
+
     const data = await response.json()
 
     if (type.includes('/news')) {

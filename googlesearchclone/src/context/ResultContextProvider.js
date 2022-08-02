@@ -5,11 +5,6 @@ const ResultContext = createContext()
 
 const baseUrl = 'https://google-search3.p.rapidapi.com/api/v1';
 
-// const APIKEY = process.env.REACT_APP_API_KEY
-
-// console.log(process.env.REACT_APP_API_KEY)
-
-
 
 export const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
